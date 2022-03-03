@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["DOM", "ES2017"],
+    "watch": true,
+    "strict": true
+  },
+  "include": ["src/script.ts"],
+  "exclude": ["node_modules"]
+}

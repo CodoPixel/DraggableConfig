@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Curvly</title>
+    <style>
+      .box {
+        /* necessary */
+        position: absolute;
+        left: 0;
+        top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
+
+        /* just for the example */
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        border: 1px solid red;
+        border-radius: 4px;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+
+      /* to better see the example, not necessary */
+      #box2 {
+        top: 0px; /* specify a top property too */
+        left: 200px;
+      }
+
+      /* just for the example */
+      body {
+        background-color: #f0f0f0;
+        height: 100vh;
+        margin: 0;
+      }
+
+      /* very important, this defines the style of the paths between the elements */
+      .path {
+        fill: none;
+        stroke: #444;
+        stroke-width: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- the draggable boxes -->
+    <div id="box1" class="box">1</div>
+    <div id="box2" class="box">2</div>
+    <div id="box3" class="box">3</div>
+    <!-- this is necessary, see the documentation on the GitHub repo for more info -->
+    <svg height="1000" width="1000" id="paths"></svg>
+
+    <h1
+      style="
+        position: fixed;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-size: 1.5em;
+      "
+    >
+      Drag the elements to see them properly
+    </h1>
+
+    <script src="script.js"></script>
+    <script>
+      const paths = document.getElementById("paths");
+
+      const connections = [
+        { boxA: "#box1", boxB: "#box2" },
+        { boxA: "#box2", boxB: "#box3" },
+      ];
+
+      new CurvlyConfig({ connections, paths });
+    </script>
+  </body>
+</html>
