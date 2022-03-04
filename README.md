@@ -61,10 +61,8 @@ Now the best part:
     { boxA: "#box2", boxB: "#box3" },
   ];
 
-  // Sets your configurations here.
-  // Not that all the methods and properties of the `CurvlyConfig` object
-  // are set as private and should not be used externally.
-  new CurvlyConfig({
+  // Set your configurations here.
+  const config = new CurvlyConfig({
     // these two properties are necessary
     connections,
     paths,
@@ -73,7 +71,12 @@ Now the best part:
     // onDrag: (e) => console.log("dragging element :", e.target),
     // padding: 5, // default is 0
     // bezierWeight: 0.7, // default is 0.675
+    // draggable: false, // default is true
   });
+
+  // you can use the following methods:
+  config.defineNewConnections(newConnections);
+  config.coordinates(); // creates the curves, to use only if `draggable` is set as `false`.
 </script>
 ```
 
@@ -97,15 +100,21 @@ interface CurvlyOptions {
 
   // If set to 0, the curve will be in the center of the element,
   // If set to a big number, it will come out of the box element.
+  // Default is 0.
   padding?: number;
   // the undulating nature of a curve between 0 and 1 (0 is a straight line).
+  // Default is 0.675.
   bezierWeight?: number;
 
+  // ---
   // the following properties are necessary.
-  //
+  // ---
   // the connections between the draggable elements.
   connections: CurvesConnections;
   // the zone in the screen which will draw the paths.
   paths: SVGElement;
+  // whether the elements set in `connections` should be draggable or not.
+  // Default is true.
+  draggable: boolean;
 }
 ```
