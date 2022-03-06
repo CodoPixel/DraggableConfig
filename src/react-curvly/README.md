@@ -2,7 +2,7 @@
 
 It allows you to draw curves between draggable elements (and to update the curves after dropping an element somewhere else on the screen). Read the documentation for React here.
 
-This is designed to become an `npm` package. Origin: [GitHub](https://github.com/CodoPixel/Curvly/tree/main/src/react-curvly).
+This is designed to become an [npm package](https://www.npmjs.com/package/react-curvly). Origin: [GitHub](https://github.com/CodoPixel/Curvly/tree/main/src/react-curvly).
 
 ## How to use?
 

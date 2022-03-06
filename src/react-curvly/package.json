@@ -1,33 +1,30 @@
 {
   "name": "react-curvly",
+  "description": "Draw curves between draggable elements",
+  "author": {
+    "name": "CodoPixel",
+    "url": "https://github.com/CodoPixel"
+  },
+  "keywords": [
+    "react-curvly",
+    "curvly",
+    "react",
+    "components",
+    "ui",
+    "curves",
+    "curve",
+    "draggable"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "url": "https://github.com/CodoPixel/Curvly/tree/main/src/react-curvly"
+  },
+  "license": "MIT",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "private": false
 }

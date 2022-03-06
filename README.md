@@ -4,6 +4,11 @@ This code is inspired by [HTML5 Drag and Drop anywhere on the screen](https://st
 
 It allows you to draw curves between draggable elements (and to update the curves after dropping an element somewhere else on the screen).
 
+## React
+
+* For React source code: [react-curvly](https://github.com/CodoPixel/Curvly/tree/main/src/react-curvly).
+* For the NPM package: [react-curvly](https://www.npmjs.com/package/react-curvly).
+
 ## How to use?
 
 See the source code available in both `TypeScript` (`src/script.ts`) and `JavaScript` (`src/script.js`), and an example in `src/example.html`.

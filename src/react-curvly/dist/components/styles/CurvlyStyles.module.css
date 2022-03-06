@@ -1,0 +1,11 @@
+.curvlyElement {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.defaultCurve {
+  fill: none;
+  stroke: #444;
+  stroke-width: 2;
+}
