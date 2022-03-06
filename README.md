@@ -57,8 +57,8 @@ Now the best part:
   // each connection is an object { boxA: "id of the element", boxB: "id of the linked element" }.
   // Define as many connections as you desire.
   const connections = [
-    { boxA: "#box1", boxB: "#box2" },
-    { boxA: "#box2", boxB: "#box3" },
+    { boxA: "box1", boxB: "box2" },
+    { boxA: "box2", boxB: "box3" },
   ];
 
   // Set your configurations here.

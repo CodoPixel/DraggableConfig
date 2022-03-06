@@ -1,0 +1,25 @@
+body {
+  background-color: #f0f0f0;
+  height: 100vh;
+  margin: 0;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 1px solid red;
+  border-radius: 4px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.path {
+  fill: none;
+  stroke: #444;
+  stroke-width: 2;
+}
+
+.zone {
+  border: 1px dashed red;
+}

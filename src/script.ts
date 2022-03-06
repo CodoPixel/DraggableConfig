@@ -38,7 +38,7 @@ class CurvlyConfig {
   constructor(options: CurvlyOptions) {
     const body = document.querySelector("body");
     if (body) {
-      body.addEventListener("dragover", this._dragOver.bind(this));
+      body.addEventListener("dragover", this._dragOver);
       body.addEventListener("drop", this._drop.bind(this));
       this._options = options;
       // may be undefined so we set the default values
@@ -105,8 +105,8 @@ class CurvlyConfig {
 
     for (let a = 0; a < this._options.connections.length; a++) {
       const connection = this._options.connections[a];
-      const boxA = document.querySelector(connection.boxA) as HTMLElement;
-      const boxB = document.querySelector(connection.boxB) as HTMLElement;
+      const boxA = document.getElementById(connection.boxA);
+      const boxB = document.getElementById(connection.boxB);
 
       if (boxA == null || boxB == null)
         throw new Error(`ID "${boxA == null ? connection.boxA : connection.boxB}" is not defined.`);
@@ -145,7 +145,7 @@ class CurvlyConfig {
       this.coordinates();
       this._options.onDragEnd?.(e);
     });
-    if (this._options.onDrag) element.addEventListener("drag", this._options.onDrag.bind(this));
+    if (this._options.onDrag) element.addEventListener("drag", this._options.onDrag);
   }
 
   private _drag(e: DragEvent): void {
