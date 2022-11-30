@@ -93,6 +93,8 @@ class CurvlyConfig {
             const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
             path.setAttribute("d", data);
             path.setAttribute("class", "path");
+            path.setAttribute("data-coming-from", connection.boxA);
+            path.setAttribute("data-going-to", connection.boxB);
             this._options.paths.appendChild(path);
         }
     }
