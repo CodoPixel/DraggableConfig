@@ -38,7 +38,7 @@ class CurvlyConfig {
   constructor(options: CurvlyOptions) {
     const body = document.querySelector("body");
     if (body) {
-      body.addEventListener("dragover", this._dragOver);
+      body.addEventListener("dragover", this._dragOver.bind(this));
       body.addEventListener("drop", this._drop.bind(this));
       this._options = options;
       // may be undefined so we set the default values
@@ -73,9 +73,9 @@ class CurvlyConfig {
   }
 
   private _offset(element: Element): OffsetPosition {
-    var rect = element.getBoundingClientRect();
+    const rect = element.getBoundingClientRect();
 
-    var offset: OffsetPosition = {
+    const offset: OffsetPosition = {
       top: rect.top + window.scrollY,
       left: rect.left + window.scrollX,
     };
@@ -105,8 +105,8 @@ class CurvlyConfig {
 
     for (let a = 0; a < this._options.connections.length; a++) {
       const connection = this._options.connections[a];
-      const boxA = document.getElementById(connection.boxA);
-      const boxB = document.getElementById(connection.boxB);
+      const boxA = document.querySelector(connection.boxA);
+      const boxB = document.querySelector(connection.boxB);
 
       if (boxA == null || boxB == null)
         throw new Error(`ID "${boxA == null ? connection.boxA : connection.boxB}" is not defined.`);
@@ -131,6 +131,8 @@ class CurvlyConfig {
       const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
       path.setAttribute("d", data);
       path.setAttribute("class", "path");
+      path.setAttribute("data-coming-from", connection.boxA);
+      path.setAttribute("data-going-to", connection.boxB);
       this._options.paths.appendChild(path);
     }
   }
@@ -156,8 +158,8 @@ class CurvlyConfig {
       }
       const dataTransferred = e.dataTransfer;
       if (dataTransferred) {
-        var style = window.getComputedStyle(target, null);
-        var str =
+        const style = window.getComputedStyle(target, null);
+        const str =
           parseInt(style.getPropertyValue("left")) -
           e.clientX +
           "," +

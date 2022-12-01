@@ -6,8 +6,7 @@ It allows you to draw curves between draggable elements (and to update the curve
 
 ## React
 
-* For React source code: [react-curvly](https://github.com/CodoPixel/Curvly/tree/main/src/react-curvly).
-* For the NPM package: [react-curvly](https://www.npmjs.com/package/react-curvly).
+* For React source code: [react-curvly](/src/react-curvly/).
 
 ## How to use?
 
@@ -62,8 +61,8 @@ Now the best part:
   // each connection is an object { boxA: "id of the element", boxB: "id of the linked element" }.
   // Define as many connections as you desire.
   const connections = [
-    { boxA: "box1", boxB: "box2" },
-    { boxA: "box2", boxB: "box3" },
+    { boxA: "#box1", boxB: "#box2" },
+    { boxA: "#box2", boxB: "#box3" },
   ];
 
   // Set your configurations here.
@@ -111,15 +110,12 @@ interface CurvlyOptions {
   // Default is 0.675.
   bezierWeight?: number;
 
-  // ---
-  // the following properties are necessary.
-  // ---
   // the connections between the draggable elements.
   connections: CurvesConnections;
   // the zone in the screen which will draw the paths.
   paths: SVGElement;
   // whether the elements set in `connections` should be draggable or not.
   // Default is true.
-  draggable: boolean;
+  draggable?: boolean;
 }
 ```

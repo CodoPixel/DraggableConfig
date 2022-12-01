@@ -44,8 +44,8 @@ class CurvlyConfig {
         }
     }
     _offset(element) {
-        var rect = element.getBoundingClientRect();
-        var offset = {
+        const rect = element.getBoundingClientRect();
+        const offset = {
             top: rect.top + window.scrollY,
             left: rect.left + window.scrollX,
         };
@@ -109,7 +109,7 @@ class CurvlyConfig {
             this._options.onDragEnd?.(e);
         });
         if (this._options.onDrag)
-            element.addEventListener("drag", this._options.onDrag.bind(this));
+            element.addEventListener("drag", this._options.onDrag);
     }
     _drag(e) {
         const target = e.target;
@@ -119,8 +119,8 @@ class CurvlyConfig {
             }
             const dataTransferred = e.dataTransfer;
             if (dataTransferred) {
-                var style = window.getComputedStyle(target, null);
-                var str = parseInt(style.getPropertyValue("left")) -
+                const style = window.getComputedStyle(target, null);
+                const str = parseInt(style.getPropertyValue("left")) -
                     e.clientX +
                     "," +
                     (parseInt(style.getPropertyValue("top")) - e.clientY) +
